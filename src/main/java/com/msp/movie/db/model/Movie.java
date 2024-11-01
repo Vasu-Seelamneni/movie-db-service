@@ -1,7 +1,11 @@
 package com.msp.movie.db.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity(name = "movies")
 public class Movie {
 
@@ -23,68 +27,11 @@ public class Movie {
     private String synopsis;
 
     @ManyToOne
-    @JoinColumn(name = "genre_id")
+    @JoinColumn(name = "genre_id", referencedColumnName = "genre_id")
     private Genre genre;
 
     @ManyToOne
-    @JoinColumn(name = "director_id")
-    private Persons director;
+    @JoinColumn(name = "director_id", referencedColumnName = "person_id")
+    private Person director;
 
-    // Getters and setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Integer getReleaseYear() {
-        return releaseYear;
-    }
-
-    public void setReleaseYear(Integer releaseYear) {
-        this.releaseYear = releaseYear;
-    }
-
-    public Integer getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
-
-    public String getSynopsis() {
-        return synopsis;
-    }
-
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
-    }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
-
-    public Persons getDirector() {
-        return director;
-    }
-
-    public void setDirector(Persons director) {
-        this.director = director;
-    }
 }

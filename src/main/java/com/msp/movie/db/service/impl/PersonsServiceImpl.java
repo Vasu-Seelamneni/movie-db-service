@@ -1,6 +1,6 @@
 package com.msp.movie.db.service.impl;
 
-import com.msp.movie.db.model.Persons;
+import com.msp.movie.db.model.Person;
 import com.msp.movie.db.repository.PersonsRepository;
 import com.msp.movie.db.service.PersonsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +19,17 @@ public class PersonsServiceImpl implements PersonsService {
     }
 
     @Override
-    public Persons save(Persons persons) {
+    public Person save(Person persons) {
         return personsRepository.save(persons);
     }
 
     @Override
-    public Persons findById(Long personId) {
+    public Person findById(Long personId) {
         return personsRepository.findById(personId).orElse(null);
     }
 
     @Override
-    public List<Persons> findAll() {
+    public List<Person> findAll() {
         return personsRepository.findAll();
     }
 

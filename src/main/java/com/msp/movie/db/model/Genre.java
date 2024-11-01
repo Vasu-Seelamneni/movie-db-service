@@ -1,7 +1,11 @@
 package com.msp.movie.db.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity(name = "genres")
 public class Genre {
     @Id
@@ -11,8 +15,7 @@ public class Genre {
 
     private String name;
 
-    // Constructor, getters, and setters
-
+    // Constructor
     public Genre() {
     }
 
@@ -20,19 +23,4 @@ public class Genre {
         this.name = name;
     }
 
-    public Long getGenreId() {
-        return genreId;
-    }
-
-    public void setGenreId(Long genreId) {
-        this.genreId = genreId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

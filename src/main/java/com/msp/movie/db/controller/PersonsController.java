@@ -1,6 +1,6 @@
 package com.msp.movie.db.controller;
 
-import com.msp.movie.db.model.Persons;
+import com.msp.movie.db.model.Person;
 import com.msp.movie.db.service.PersonsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +19,12 @@ public class PersonsController {
     }
 
     @GetMapping("/all")
-    public List<Persons> getAllPersons() {
+    public List<Person> getAllPersons() {
         return personsService.findAll();
     }
 
     @GetMapping("/find/{id}")
-    public Persons findPersonById(@PathVariable Long id) {
+    public Person findPersonById(@PathVariable Long id) {
         return personsService.findById(id);
     }
 
@@ -34,8 +34,8 @@ public class PersonsController {
     }
 
     @PostMapping("/save")
-    public Persons savePerson(@RequestBody Persons persons) {
-        return personsService.save(persons);
+    public Person savePerson(@RequestBody Person person) {
+        return personsService.save(person);
     }
 
 }
