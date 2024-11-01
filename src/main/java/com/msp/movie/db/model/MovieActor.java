@@ -14,11 +14,11 @@ public class MovieActor {
     private MovieActorId id;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id", referencedColumnName = "movie_id")
+    @JoinColumn(name = "movie_id", referencedColumnName = "movie_id", insertable = false, updatable = false)
     private Movie movie;
 
     @ManyToOne
-    @JoinColumn(name = "actor_id", referencedColumnName = "person_id")
+    @JoinColumn(name = "actor_id", referencedColumnName = "person_id", insertable = false, updatable = false)
     private Person actor;
 
     @Column(name = "role")
